@@ -1,0 +1,260 @@
+/* 
+    Author: Ibrahim Ahmed, 000880591. This is the external styling for our game.
+    Created 23rd March 2023.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f3f3f3;
+    color: #111;
+}
+
+/* landing page style */
+.hero {
+    padding-bottom: 2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: #041620;
+}
+.cube-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.cube {
+    margin: 7em auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(45deg);
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #74bac7;
+    opacity: 0.6;
+}
+
+.front {
+    transform: translateZ(100px);
+}
+
+.back {
+    transform: translateZ(-100px) rotateY(180deg);
+    box-shadow: inset 0 0 55px #0005;
+
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(100px);
+    box-shadow: inset 0 0 55px #0005;
+
+}
+
+.left {
+    transform: rotateY(90deg) translateZ(-100px);
+    
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(100px);
+    box-shadow: inset 0 10px 15px #0005;
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* instructions stying */
+.instruction {
+    padding-inline: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.5em;
+}
+.instruction h3{
+    color: #1c74aa;
+    margin: 0.2em 1em 1em;
+    font-size: 22px;
+}
+.instruction p {
+    margin-bottom: 10px;
+    line-height: 15px;
+    color: #111;
+}
+.instruction div {
+    background: #f1f1f1;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0002;
+}
+.instruction span {
+    color: red;
+    font-family: cursive;
+    display: inline-block;
+    margin: 0.7em;
+}
+/* game view styling */
+.game {
+    background: #f9f9f9;
+    padding-block: 2em;
+    padding-inline: 2em;
+    border-radius: 0.4em;
+    box-shadow: 0 2px 10px #0002;
+    position: relative;
+}
+h2{
+    text-align: center;
+    color: darkblue;
+    font-size: 35px;
+}
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    color: #05123a;
+    font-size: larger;
+}
+.game-info p {
+    margin: 0.8em 0;
+}
+.game-info input {
+    color: #111;
+    font-weight: 600;
+    font-size: 1.05em;
+    max-width: 50px;
+    border: none;
+    outline: none;
+    padding-left: 0.3em;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 10px #0002;
+}
+
+.coin-container {
+    width: fit-content;
+    margin: 1.5em auto;
+    box-shadow: 0 0 7px #0005;
+    border-radius: 0.6em;
+}
+
+#coinCollection {
+    transition: all 0.3s ease;
+}
+
+.coin {
+    transition: all 0.3s ease;
+    stroke: #232424;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.animate {
+    animation: toss 1s linear forwards;
+}
+
+@keyframes toss {
+    20% {
+        transform: scale(0.85) rotateX(360deg) translateX(-0.2em) translateY(0.5em);
+    }
+
+    40% {
+        transform: scale(1.1) rotateX(0deg) translateX(-0.6em) translateY(1em);
+    }
+
+    60% {
+        transform: scale(1.25) rotateX(360deg) translateX(-0.7em) translateY(0.5em);
+    }
+
+    80% {
+        transform: scale(1.05) rotateX(0deg) translateX(-0.2em) translateY(0.2em);
+    }
+
+    95% {
+        transform: scale(0.85) rotateX(360deg) translateX(-0.05em) translateY(0);
+    }
+}
+
+.game-interactivity {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    outline: none;
+    width: 120px;
+    color: #000;
+    background: #74bac7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+/* winning animation */
+.animation {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, 50% );
+    display: none;
+}
+
+.animation span {
+    position: absolute;
+    display: inline-block;
+    aspect-ratio: 1;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: throb 2s linear infinite alternate-reverse;
+    transition: 0.2s ease;
+}
+.ball:nth-child(odd){
+    width: 30px;
+    background: rgb(221, 164, 221);
+    animation-delay: 1s;
+}
+
+.ball:nth-child(even) {
+    width: 40px;
+    background: #92c4e2;
+}
+
+
+@keyframes throb {
+    20%{
+        width: 40px; 
+    }
+    40%{
+        width: 30px;
+    }
+    60%{
+        width: 10px;
+    }
+    80%{
+        width: 30px;
+    }
+    100%{
+        width: 40px;
+    }
+}
+footer{
+    padding: 2em;
+    text-align: center;
+    color: #041620;
+    font-size: 1.2em;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignmnet 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <!-- Author: Ibrahim Ahmed -->
+    <!-- Created 23rd March -->
+    <!-- This is a program to create svgs and interact with them dynamically using javascript. It is a game where you toss coins and get score -->
+</head>
+
+<body>
+    <div class="hero">
+        <!-- landing page section. This contains the instructions -->
+        <h1>MYSTERY TOSSER</h1>
+        <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+        </div>
+
+        <div class="instruction">
+            <div>
+                <h3>How To Play?</h3>
+                <p>Mystery Tosser is indeed a mysterious game. Even I dont know how to win haha!!</p>
+                <p>You are to create a coins collection by clicking the <a href="#btn1">Make Coins</a> button bellow and to roll your coins, click the <a href="#btn2">Roll Coins</a> button</p>
+                <p>You can remove any coin from the collection by clicking on it, but this will update the winning criteria</p>
+            </div>
+            <div>
+                <h3>How To Win?</h3>
+                <p>The collection contains some number of green and red coins</p>
+                <p>To win, you are to toss all the coins in the collection then the mystery happens.</p>
+                <p>The number of greeen coins after tossing must match with the winning number to win the game. 
+                    <br>There is a special reward if you have a 10 point score. <span>STAY MYSTERIOUS, HAHAHA!!!</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- game center -->
+    <div class="game">
+        <div class="animation">
+            <h2>Yay!! You won 10 points</h2>
+            <span class="ball"></span<span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span>
+            <span class="ball"></span<span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span>
+            <span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span><span class="ball"></span>
+        </div>
+        <div class="game-info">
+            <div>
+                <p>Green Count: <input type="text" id="green-count" readonly></p>
+                <p>Red Count: <input type="text" id="red-count" readonly></p>
+            </div>
+
+            <div>
+            <p>To win game, roll <input type="text" id="winning" readonly> green coins</p>
+            <p>SCORE: <input type="text" id="score" readonly></p>
+            </div>
+        </div>
+
+        <h2>Coin Collections</h2>
+        <!-- the svg container -->
+        <div class="coin-container">
+            <svg width="400" height="500" id="coinCollection">
+                <!-- contents will be added with javascript -->
+
+
+            </svg>
+        </div>
+
+        <div class="game-interactivity">
+            <button onclick="makeCoins()" id="btn1">
+                Make Coins
+            </button>
+            <button onclick="rollCoins()" id="btn2">
+                Roll Coins
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <!-- footer -->
+        <p>Ibrahim Ahmed, 000880591 &copy;: 2023</p>
+    </footer>
+
+</body>
+
+</html>
